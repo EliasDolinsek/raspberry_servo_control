@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 
 class ConnectionManager {
@@ -10,8 +9,6 @@ class ConnectionManager {
     Socket.connect(address, port).then((Socket socket){
       this.socket = socket;
       started = true;
-    }).catchError((AsyncError e){
-      throw Exception(e.toString());
     });
   }
 
@@ -30,11 +27,12 @@ class ConnectionManager {
       throw new Exception("Invalid duty cycle");
     }
 
-    socket.write("dc:$value}");
+    socket.write("dc:$value:");
   }
 
   void sendStart(double pwm){
     socket.write("start:$pwm");
+    started = true;
   }
 
   void sendStop(){

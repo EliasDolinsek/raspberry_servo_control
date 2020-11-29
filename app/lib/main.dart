@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/bloc.dart';
+import 'connected_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class AppHome extends StatelessWidget {
             if(state is NotConnectedState){
               return NotConnectedPage(state: state);
             } else if(state is ConnectedState){
-              return Text("CONNECTED");
+              return ConnectedPage(state: state);
             } else {
               return LoadingPage();
             }

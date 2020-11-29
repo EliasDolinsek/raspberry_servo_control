@@ -20,12 +20,12 @@ class LoadingState extends AppState {
 }
 
 class ConnectedState extends AppState {
-  final String title, address, status;
+  final String title, address;
   final int port;
   final bool started;
 
-  ConnectedState({this.title, this.address, this.status, this.port, this.started});
+  ConnectedState({this.title, this.address, this.port, this.started});
 
   @override
-  List<Object> get props => [title, address, status, port, started];
+  List<Object> get props => [title, address, port, started];
 }

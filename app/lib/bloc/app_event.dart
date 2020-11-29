@@ -24,6 +24,15 @@ class StopEvent extends AppEvent {
   List<Object> get props => [];
 }
 
+class UpdateDutyCycleEvent extends AppEvent {
+  final double dutyCycle;
+
+  UpdateDutyCycleEvent(this.dutyCycle);
+
+  @override
+  List<Object> get props => [dutyCycle];
+}
+
 class DisconnectEvent extends AppEvent {
   @override
   List<Object> get props => [];
